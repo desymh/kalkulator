@@ -1,18 +1,35 @@
+// Fungsi untuk menampilkan modal dengan hasil kalkulasi
+function showResultModal(result) {
+    const modal = document.getElementById('resultModal');
+    const resultText = document.getElementById('resultText');
+    resultText.textContent = result; // Set hasil kalkulasi
+    modal.classList.add('show'); // Tampilkan modal
+}
+
+// Fungsi untuk menutup modal
+function closeModal() {
+    const modal = document.getElementById('resultModal');
+    modal.classList.remove('show'); // Sembunyikan modal
+}
+
+// Event listener untuk tombol close
+document.getElementById('closeModal').addEventListener('click', closeModal);
+
+// Event listener untuk form submit
 document.getElementById('calculator-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Mencegah halaman reload saat form disubmit
-    
-    // Ambil input nilai dari form
-    var num1 = parseFloat(document.getElementById('num1').value);
-    var num2 = parseFloat(document.getElementById('num2').value);
-    var operator = document.getElementById('operator').value;
+    event.preventDefault(); // Mencegah form disubmit ke server
 
-    var result;
+    // Ambil nilai input dari form
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    const operator = document.getElementById('operator').value;
 
-    // Validasi input
+    let result;
+
+    // Periksa apakah input valid dan kalkulasi hasil
     if (isNaN(num1) || isNaN(num2)) {
-        result = "Input tidak valid! Pastikan memasukkan angka.";
+        result = "Invalid input! Please enter valid numbers.";
     } else {
-        // Hitung berdasarkan operator yang dipilih
         switch (operator) {
             case '+':
                 result = num1 + num2;
@@ -25,17 +42,16 @@ document.getElementById('calculator-form').addEventListener('submit', function(e
                 break;
             case '/':
                 if (num2 === 0) {
-                    result = "Error: Pembagian dengan nol!";
+                    result = "Error: Division by zero!";
                 } else {
                     result = num1 / num2;
                 }
                 break;
             default:
-                result = "Operator tidak valid";
-                break;
+                result = "Invalid operator!";
         }
     }
 
-    // Tampilkan hasil kalkulasi menggunakan alert
-    alert('Hasil: ' + result);
+    // Tampilkan modal dengan hasil kalkulasi
+    showResultModal(result);
 });

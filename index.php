@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      <div id="resultModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeModal">&times;</span>
-            <h3>Hasil Kalkulasi:</h3>
+            <h3>Hasil: </h3>
             <p id="resultText"></p>
         </div>
     </div>
