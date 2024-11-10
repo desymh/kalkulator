@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <div class="calculator">
-        <h2>Kalkulator Sederhana</h2>
+        <h2>Kalkulator</h2>
 
         <!-- Form untuk kalkulasi -->
         <form method="POST" id="calculator-form">
