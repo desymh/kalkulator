@@ -15,6 +15,8 @@ function closeModal() {
 // Event listener untuk tombol close
 document.getElementById('closeModal').addEventListener('click', closeModal);
 
+document.getElementById('okButton').addEventListener('click', closeModal);
+
 // Event listener untuk form submit
 document.getElementById('calculator-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Mencegah form disubmit ke server

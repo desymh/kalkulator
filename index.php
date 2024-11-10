@@ -79,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <span class="close" id="closeModal">&times;</span>
             <h3>Hasil: </h3>
             <p id="resultText"></p>
+            <button class="ok-button" id="okButton">OK</button>
         </div>
     </div>
 
