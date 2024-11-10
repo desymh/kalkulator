@@ -73,15 +73,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <button type="submit" id="submit-button">Hitung</button>
             </div>
         </form>
-
-        <!-- Tempat hasil kalkulasi akan ditampilkan -->
-        <?php if ($result !== ""): ?>
-            <div class="result">
-                <h3>Hasil:</h3>
-                <p><?php echo $result; ?></p>
-            </div>
-        <?php endif; ?>
-
+    </div>
+     <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h3>Hasil Kalkulasi:</h3>
+            <p id="resultText"></p>
+        </div>
     </div>
 
     <script src="script.js"></script>
